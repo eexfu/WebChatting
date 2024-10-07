@@ -1,4 +1,4 @@
-#WebChatting
+# WebChatting
 
 Note: This was done by Ruslan Galiullin, Xun Fu, Koenraad Goddefroy, Sebastiaan Schoeters & Alvaro Geerken as a school project.
 
