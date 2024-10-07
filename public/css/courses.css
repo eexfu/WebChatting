@@ -1,0 +1,53 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.feedback-bar{
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.feedback-sidebar {
+    width: 90%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.feedback-user {
+    display: flex;
+    align-items: center;
+}
+
+.feedback-user-image {
+    border-radius: 20px;
+    width: 40px;
+    height: 40px;
+}
+
+.feedback-user-info {
+    display: flex;
+    align-items: center;
+}
+
+.feedback-user-name {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 12px;
+}
+
+.feedback-content {
+    font-size: 14px;
+}
+

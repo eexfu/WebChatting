@@ -1,0 +1,95 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+main {
+    flex: 1;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+form div {
+    padding: 10px; /* Adjust padding as needed */
+    margin-bottom: 10px; /* Add margin between the divs */
+}
+
+.fill {
+    display: flex;
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
+    height: 70vh; /* Set the height to 100% of the viewport height */
+}
+
+.divForm {
+    display: flex;
+    align-items: center; /* Vertically center */
+    padding: 8px 16px;
+    width: 320px;
+    height: 40px;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid black;
+}
+
+.entryForm {
+    width: 150%;
+    height: 100%;
+    color: rgba(0, 0, 0, 0.65);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    border: none;
+    outline: none;
+    background: none;
+    text-align: left; /* Ensure text starts on the left */
+    padding: 10px 0 0 0; /* Remove any extra padding */
+    margin: 0; /* Remove any default margin */
+    display: flex; /* Use flexbox for centering */
+    align-items: center; /* Vertically center text inside the input */
+}
+
+.submitDiv {
+    padding: 8px 16px;
+    background: #EB805E;
+    border-radius: 8px;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    display: inline-flex
+}
+
+.btn {
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    word-wrap: break-word;
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+}
+
+.top,
+.bottom {
+    flex: 1;
+}

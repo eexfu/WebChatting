@@ -1,0 +1,77 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/schedule.css') }}" />
+    <title> {{ pageTitle}} </title>
+{% endblock %}
+
+{% block content %}
+    <body>
+    <div class="container">
+        <div class="inner">
+            <table>
+                <index>
+                    <th> <day_label>Monday</day_label> </th>
+                    <th> <day_label>Tuesday</day_label> </th>
+                    <th> <day_label>Wednesday</day_label> </th>
+                    <th> <day_label>Thursday</day_label> </th>
+                    <th> <day_label>Friday</day_label> </th>
+                </index>
+
+                <tbody>
+                    <td id="monday">
+                        <event>
+                            {% for monday in courses_monday %}
+                            <b>Course: </b> <br /> <t1>{{ monday.title }}</t1><br />
+                            <b>Begin: </b> <br /> <t1> {{ monday.begin}} </t1><br />
+                            <b>End: </b> <br /> <t1> {{ monday.end}} </t1><br /> <br /><br />
+                            {% endfor %}
+                        </event>
+                    </td>
+
+                    <td id="tuesday">
+                        <event>
+                            {% for course in courses_tuesday %}
+                            <b>Course: </b><br /><t1>{{ course.title }}</t1><br />
+                            <b>Begin: </b><br /><t1> {{ course.begin }} </t1><br />
+                            <b>End: </b><br /><t1> {{ course.end }} </t1><br /><br /><br />
+                            {% endfor %}
+                        </event>
+                    </td>
+
+                    <td id="wednesday">
+                        <event>
+                            {% for course in courses_wednesday %}
+                            <b>Course: </b><br /><t1>{{ course.title }} </t1><br />
+                            <b>Begin: </b><br /><t1> {{ course.begin }} </t1> <br />
+                            <b>End: </b><br /><t1> {{ course.end }} </t1><br /><br /><br />
+                            {% endfor %}
+                        </event>
+                    </td>
+
+                    <td id="thursday">
+                        <event>
+                            {% for course in courses_thursday %}
+                            <b>Course: </b><br /><t1>{{ course.title }}</t1><br />
+                            <b>Begin: </b><br /><t1> {{ course.begin }} </t1><br />
+                            <b>End: </b><br /><t1> {{ course.end }} </t1><br /><br /><br />
+                            {% endfor %}
+                        </event>
+                    </td>
+
+                    <td id="friday">
+                        <event>
+                            {% for course in courses_friday %}
+                            <b>Course: </b><br /><t1> {{ course.title }} </t1><br />
+                            <b>Begin: </b><br /><t1> {{ course.begin }} </t1><br />
+                            <b>End: </b><br /><t1> {{ course.end }} </t1><br /><br /><br />
+                            {% endfor %}
+                        </event>
+                    </td>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    </body>
+{% endblock %}

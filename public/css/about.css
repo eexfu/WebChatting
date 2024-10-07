@@ -1,0 +1,38 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 80%;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+.container div {
+    padding: 10px;
+}
+
+.container p {
+    text-align: justify;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}

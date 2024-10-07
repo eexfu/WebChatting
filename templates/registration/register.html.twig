@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/registration.css') }}" />
+{% endblock %}
+
+{% block content %}
+<main>
+    <section class="login">
+    <div class="top"><p></p></div>
+        {% for flash_error in app.flashes('verify_email_error') %}
+            <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+        {% endfor %}
+
+        {% if form_errors(registrationForm) %}
+            <div class="form-errors">
+                {{ form_errors(registrationForm) }}
+            </div>
+        {% endif %}
+
+
+    <div class="fill">
+    {{ form_start(registrationForm) }}
+    <div class="divForm">
+        {{ form_row(registrationForm.id, {
+            label: false
+        }) }}
+    </div>
+    <div class="divForm">
+        {{ form_row(registrationForm.email, {
+            label: false
+        }) }}
+    </div>
+    <div class="divForm">
+        {{ form_row(registrationForm.firstName, {
+            label: false
+        }) }}
+    </div>
+    <div class="divForm">
+        {{ form_row(registrationForm.lastName, {
+            label: false
+        }) }}
+    </div>
+    <div class="divForm">
+        {{ form_row(registrationForm.plainPassword, {
+            label: false
+        }) }}
+    </div>
+    {{ form_row(registrationForm.agreeTerms) }}
+
+        <div class="submitDiv">
+            <button class="btn" type="submit">Register</button>
+        </div>
+    {{ form_end(registrationForm) }}
+    </div>
+        <div class="bottom"><p></p></div>
+    </section>
+</main>
+{% endblock %}
+
+{% block footer %}
+    <p>Already have an account? <a href="/login">Log in</a> here. | <a href="/about">StudentBridges</a></p>
+{% endblock %}

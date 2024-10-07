@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>StudentBridges</title>
+    <link rel="stylesheet" href="{{ asset('css/base.css') }}" />
+    {% block stylesheets %}
+    {% endblock %}
+
+    {% block javascripts %}
+    {% endblock %}
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href={{ path('main') }}>
+            <img src={{ asset('images/LogoNoBackground.png') }} alt="Icon" class="navbar-icon">
+        </a>
+        <a class="navbar-text" href={{ path('main') }}>StudentBridges</a>
+        <div class="navbar-item-spacer"></div>
+
+    </nav>
+
+    {% block content %}
+    {% endblock %}
+
+    <footer>
+        {% block footer %}
+            <p>© 2024 All Rights Reserved | <a href="/about">StudentBridges</a></p>
+        {% endblock %}
+    </footer>
+</body>
+</html>

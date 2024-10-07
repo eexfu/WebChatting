@@ -1,0 +1,55 @@
+body {
+    background: #f0ece2;
+}
+
+.container {
+    max-width: 1800px;
+    width: auto;
+    overflow: scroll;
+    flex-wrap: nowrap;
+}
+
+.inner {
+    height: auto;
+    flex-wrap: inherit;
+}
+
+.container::-webkit-scrollbar {
+    display: none;
+}
+
+table {
+    width: 1800px;
+    height: 75px;
+}
+
+index {
+    height: 75px;
+}
+
+th {
+    width: 300px;
+    background-color: #EB805E;
+}
+
+td {
+    background-color: #EB8055;
+    padding: 5px;
+    align-content: start;
+}
+
+day_label {
+    color: #333;
+    z-index: 5;
+    font-size: 25px;
+}
+
+event {
+    padding: 0;
+    text-align: center;
+}
+
+t1 {
+    text-align: center;
+    font-size: 22px;
+}

@@ -1,0 +1,135 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/courses.css') }}" />
+    <link
+            type="text/css"
+            rel="stylesheet"
+            href={{ asset('css/litewebchat.min.css') }}
+    />
+    <link
+            type="text/css"
+            rel="stylesheet"
+            href={{ asset('css/litewebchatinput.min.css') }}
+    />
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="left">
+            <button class="borderless-button" onclick="window.location.href='settings';">
+                <img class="user-image" src="{{ asset('images/user_icon.png') }}" alt="User" width="35" height="35">
+                <span class="user-name">{{ user.name }}</span>
+            </button>
+            <hr class="boundary">
+            <button class="borderless-button" id="course-schedule">Course Schedule</button>
+            <button class="borderless-button" id="groups">Groups</button>
+            <button class="borderless-button" id="feedback">Feedback</button>
+        </div>
+
+        <div class="middle" id="content" data-groupList="{{ course_titles|json_encode }}">
+            <h2>Course Schedule</h2>
+            <table>
+                <tr>
+                    <th>Course</th>
+                    <th>Time</th>
+                </tr>
+                {% if course_titles is defined %}
+                    {% for title in course_titles %}
+                            <tr>
+                                <td>{{ title }}</td>
+                                <td>2024-5-7 18:00</td>
+                            </tr>
+                    {% endfor %}
+                    {% else %}
+                    No titles found.
+                {% endif %}
+            </table>
+        </div>
+
+        <div class="right feedback-bar">
+            <div style="font-size: 20px">Feedback</div>
+            <hr>
+            {% if feedback is defined %}
+            {% for feedback in feedbacks %}
+                <div class="feedback-sidebar">
+                    <div class="feedback-user-info">
+                        <img src="{{ asset('images/user_icon.png') }}" alt="User Avatar" class="user-image">
+                        <div class="feedback-user-name">
+                            <span style="color: #8b8b8b">Commented by: </span>
+                            <span>@{{ feedback.username }}</span>
+                        </div>
+                    </div>
+                    <div class="feedback-content">
+                        {{ feedback.content }}
+                    </div>
+                </div>
+            {% endfor %}
+            {% else %}
+                No feedback found.
+            {% endif %}
+            <hr>
+        </div>
+    </div>
+
+    <script src={{ asset('js/course.js') }}></script>
+    <script src={{ asset('js/litewebchat_input.min.js') }}></script>
+    <script src={{ asset('js/litewebchat_render.min.js') }}></script>
+{% endblock %}
+
+{% block footer %}
+
+{% endblock %}
+
+{#<div class="feedback-sidebar">#}
+{#    <div class="feedback-user-info">#}
+{#        <img src="{{ asset('images/user_icon.png') }}" alt="User Avatar" class="user-image">#}
+{#        <div class="feedback-user-name">#}
+{#            <span style="color: #8b8b8b">Commented by: </span>#}
+{#            <span>@user-xf</span>#}
+{#        </div>#}
+{#    </div>#}
+{#    <div class="feedback-content">#}
+{#        This course is interesting. I really like it.#}
+{#    </div>#}
+{#</div>#}
+{#<hr style="width: 90%">#}
+{#<div class="feedback-sidebar">#}
+{#    <div class="feedback-user-info">#}
+{#        <img src="{{ asset('images/user_icon.png') }}" alt="User Avatar" class="user-image">#}
+{#        <div class="feedback-user-name">#}
+{#            <span style="color: #8b8b8b">Commented by: </span>#}
+{#            <span>@user-xf</span>#}
+{#        </div>#}
+{#    </div>#}
+{#    <div class="feedback-content">#}
+{#        This course is interesting. I really like it.#}
+{#    </div>#}
+{#</div>#}
+{#<hr style="width: 90%">#}
+{#<div class="feedback-sidebar">#}
+{#    <div class="feedback-user-info">#}
+{#        <img src="{{ asset('images/user_icon.png') }}" alt="User Avatar" class="user-image">#}
+{#        <div class="feedback-user-name">#}
+{#            <span style="color: #8b8b8b">Commented by: </span>#}
+{#            <span>@user-xf</span>#}
+{#        </div>#}
+{#    </div>#}
+{#    <div class="feedback-content">#}
+{#        This course is interesting. I really like it.#}
+{#    </div>#}
+{#</div>#}
+{#<hr style="width: 90%">#}
+{#<div class="feedback-sidebar">#}
+{#    <div class="feedback-user-info">#}
+{#        <img src="{{ asset('images/user_icon.png') }}" alt="User Avatar" class="user-image">#}
+{#        <div class="feedback-user-name">#}
+{#            <span style="color: #8b8b8b">Commented by: </span>#}
+{#            <span>@user-xf</span>#}
+{#        </div>#}
+{#    </div>#}
+{#    <div class="feedback-content">#}
+{#        This course is interesting. I really like it.#}
+{#    </div>#}
+{#</div>#}

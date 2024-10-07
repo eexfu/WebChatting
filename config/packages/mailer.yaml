@@ -1,0 +1,8 @@
+framework:
+    mailer:
+        dsn: '%env(MAILER_DSN)%'
+        envelope:
+            sender: 'confirmation@studentbridges.com'
+        headers:
+            From: 'StudentBridges <confirmation@studentbridges.com>'
+            X-Custom-Header: 'Confirm your account'

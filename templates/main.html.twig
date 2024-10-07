@@ -1,0 +1,115 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}" />
+    <link
+            type="text/css"
+            rel="stylesheet"
+            href={{ asset('css/litewebchat.min.css') }}
+    />
+    <link
+            type="text/css"
+            rel="stylesheet"
+            href={{ asset('css/litewebchatinput.min.css') }}
+    />
+    <meta name="webSocketIp" data-webSocketIp="{{ webSocketIp | json_encode }}">
+    <meta name="messages" data-messages="{{ messages | json_encode }}">
+{% endblock %}
+
+{% block content %}
+    <div class="container" id="container" data-server-ip="{{ serverIp|json_encode }}">
+        <div class="left">
+            <button class="borderless-button" data-user="{{ user|json_encode }}" id="userBtn" onclick="window.location.href='settings';">
+                {% if user.icon %}
+                    <img class="user-image" src="data:image/png;base64,{{ user.icon }}" alt="User Icon" width="35" height="35">
+                {% else %}
+                    <img class="user-image" src="{{ asset('images/user_icon.png') }}" alt="Default User Icon" width="35" height="35">
+                {% endif %}
+                <span class="user-name">{{ user.username }}</span>
+            </button>
+            <hr class="boundary">
+            <form action="{{ path('schedule') }}" method="get">
+                <button class="borderless-button">My Schedule</button>
+            </form>
+            <form action="{{ path('course') }}" method="get">
+                <button class="borderless-button">Courses</button>
+            </form>
+            <form action="{{ path('settings') }}" method="get">
+                <button class="borderless-button">Settings</button>
+            </form>
+            <form action="{{ path('about') }}" method="get">
+                <button class="borderless-button">About</button>
+            </form>
+        </div>
+
+        <div class="welcome" id="welcome">
+            <h1>Welcome to StudentBridge</h1>
+            <h3>Search or click a user to start chat!</h3>
+        </div>
+
+        <div class="middle" id="chatArea" style="display: none">
+            <div class="chatBar" id="chatBar" data-chat-id="">
+                <div id="chatName">Alice</div>
+                <hr class="boundary" style="width: 100%">
+            </div>
+
+            <div class="lite-chatbox my-chatbox" id="chatbox">
+
+            </div>
+
+            <div class="lite-chattools">
+                <div class="lite-chatbox-tool" id="emojiMart" style="display:none">
+                    <em-emoji-picker></em-emoji-picker>
+                </div>
+                <div id="toolMusk" style="display:none">
+
+                </div>
+            </div>
+
+            <div class="lite-chatinput my-chatinput">
+                <hr class="boundary" style="margin-bottom: 20px">
+                <div class="editor chatinput" aria-label="input area" contenteditable="true" ref="editor" id="message" style="margin-bottom: 10px"></div>
+                <button class="send" id="sendBtn">Send</button>
+                <div style="margin-bottom: 20px"></div>
+                <hr class="boundary">
+            </div>
+        </div>
+
+        <div class="right">
+            <div class="searchBar">
+                <button id="returnBtn" style="display: none">
+                    <svg viewBox="0 0 24 24" width="16px" height="16px" style="display: flex; justify-content: center; align-content: center">
+                        <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"></path>
+                    </svg>
+                </button>
+                <input type="text" name="query" id="search-box" placeholder="find someone..." required>
+                <button type="submit" id="searchBtn">Search</button>
+            </div>
+            <hr>
+            <div id="chatList" data-chatList = "{{ chatList|json_encode|e('html_attr') }}">
+                {% for chat in chatList %}
+                    <button class="borderless-button chat-button" data-chat="{{ chat | json_encode | e('html_attr') }}">
+                        {% if chat.icon %}
+                            <img class="user-image" src="data:image/png;base64,{{ chat.icon }}" alt="user{{ chat.id }}" width="35" height="35">
+                        {% else %}
+                            <img class="user-image" src="{{ asset('images/user_icon.png') }}" alt="user{{ chat.id }}" width="35" height="35">
+                        {% endif %}
+                        <span class="user-name">{{ chat.username }}</span>
+                        <span class="notification-dot"></span>
+                    </button>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ asset( 'js/main.js' ) }}"></script>
+{#    <script src="{{ asset( 'js/litewebchat_input.min.js' ) }}"></script>#}
+{#    <script src="{{ asset( 'js/litewebchat_render.min.js' ) }}"></script>#}
+    <script src="https://js.pusher.com/7.0/pusher.min.js"></script>
+{#    <script src="https://cdn.jsdelivr.net/npm/emoji-mart@latest/dist/browser.js"></script>#}
+
+{% endblock %}
+
+{#{% block footer %}#}
+
+{#{% endblock %}#}

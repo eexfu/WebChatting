@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+        h1 {
+            color: #EB805E;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #EB805E;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        p {
+            line-height: 1.6;
+        }
+    </style>
+    <title>Welcome to StudentBridges</title>
+</head>
+<body>
+<div class="container">
+    <h1>Hi there! 👋</h1>
+    <p>
+        Thanks for signing up! To complete your registration, please confirm your email address by clicking the button below:
+    </p>
+    <a href="{{ signedUrl|raw }}" class="btn">Confirm My Email</a>
+    <p>
+        This link will expire in {{ expiresAtMessageKey|trans(expiresAtMessageData, 'VerifyEmailBundle') }}.
+    </p>
+    <p>
+        We're excited to have you on board! 😄
+    </p>
+    <p>
+        Cheers,<br>
+        StudentBridges Team
+    </p>
+</div>
+</body>
+</html>

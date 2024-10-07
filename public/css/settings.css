@@ -1,0 +1,123 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+
+.container div {
+    padding: 10px;
+}
+
+.left {
+    width: 150px;
+    background-color: #f0f0f0;
+}
+
+.user-name {
+    font-size: 15px;
+}
+
+.middle {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    background-color: #ffffff;
+    text-align: left;
+}
+
+.personalInfo {
+    transition: all .5s ease-in;
+    width: 80%;
+}
+
+    h1 {
+        font-family: 'Roboto', sans-serif;
+        font-size: 1rem;
+        margin-top: 40px;
+        margin-bottom: 35px;
+    }
+
+    h2 {
+        font-family: 'Roboto', sans-serif;
+        text-transform: uppercase;
+        font-size: 8px;
+        letter-spacing: 1px;
+        margin-left: 2px;
+        margin-top: 10px;
+    }
+    .input, p {
+        border: transparent;
+        border-bottom: 1px solid #EB805E;
+        width: 80%;
+        font-family: 'Roboto', sans-serif;
+        font-size: .7em;
+        padding: 7px 0;
+        color: black;
+        outline: none;
+    }
+    span {
+        font-size: .7em;
+    }
+
+
+
+
+.borderless-button {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    background-color: Transparent;
+    border-style: none;
+    color: #333;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.borderless-button:hover {
+    background-color: #ffffff;
+    color: #000;
+}
+
+.btn{
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    border: transparent;
+    margin-top: 16px;
+    background-color: #EB805E;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-radius: 10px;
+    text-decoration: none;
+    padding: 8px 16px;
+    box-shadow: 0 2px 4px 0 rgb(0,0,0,.2);
+}
+
+.logout{
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    border: transparent;
+    margin-top: 16px;
+    background-color: #DC143C;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-radius: 10px;
+    text-decoration: none;
+    padding: 8px 16px;
+    box-shadow: 0 2px 4px 0 rgb(0,0,0,.2);
+}
+
+.user-image {
+    border-radius: 20px;
+    width: 40px;
+    height: 40px;
+}
